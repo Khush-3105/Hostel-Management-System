@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>SIGNUP PAGE</title>
+    <title>Student Sign Up</title>
     <!-- meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -105,7 +105,7 @@
         <p class=" w3l-register-p">Already a member?<a href="index.php" class="register"> Login</a></p>
     </div>
     <footer>
-        <p class="copyright-agileinfo"> &copy; 2018 DBMS Project. All Rights Reserved | Design by <a href="https://www.linkedin.com/in/bharat-reddy/">Bharat-Prajwal-Rakesh</a></p>
+        <p class="copyright-agileinfo"> &copy; 2023 EPICS Project. All Rights Reserved | Design by Group 169</a></p>
     </footer>
 
 </body>

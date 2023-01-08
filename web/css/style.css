@@ -18,7 +18,7 @@ h1 {
 
 h2 {
     margin: 0;
-    color: #fc3955;
+    color: #fb8500;
     font-size: 25px;
     font-weight: 400;
     text-align: center;
@@ -49,7 +49,7 @@ p.w3l-register-p {
 }
 
 .group i {
-    color: #fc3955;
+    color: #fb8500;
     font-size: 20px;
     padding: 0 10px;
 }
@@ -83,7 +83,7 @@ input[type="password"]:focus {
 }
 
 button {
-    background: #fc3955;
+    background: #fb8500;
     color: #ffffff;
     font-size: 13px;
     text-transform: uppercase;
