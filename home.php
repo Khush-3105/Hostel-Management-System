@@ -185,7 +185,7 @@
 <footer class="py-5">
 	<div class="container py-md-5">
 		<div class="footer-logo mb-5 text-center">
-			<a class="navbar-brand" href="http://www.nitc.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
+			<a class="navbar-brand" href="http://www.vitbhopal.ac.in/" target="_blank">NIT <span class="display"> CALICUT</span></a>
 		</div>
 		<div class="footer-grid">
 			
