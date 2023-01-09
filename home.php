@@ -60,7 +60,7 @@
 			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="home.php">Home<span class="sr-only">(current)</span></a>
 					</li>
 					
 					<li class="nav-item">
@@ -104,7 +104,7 @@
 									<circle id="cd-circle-1" cx="110" cy="400" r="1364"/>
 								</clipPath>
 							</defs>
-							<image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="web_home/images/1.png"></image>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="web_home/images/1.jpg"></image>
 						</svg>
 					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content">
@@ -126,7 +126,7 @@
 									<circle id="cd-circle-2" cx="1290" cy="400" r="60"/>
 								</clipPath>
 							</defs>
-							<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="web_home/images/2.png"></image>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="web_home/images/2.jpg"></image>
 						</svg>
 					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content text-center">
@@ -140,16 +140,39 @@
 						</div>
 					</div> <!-- .cd-radial-slider-content -->
 				</li>
-				<li>
+				<li class="next-slide">
 					<div class="svg-wrapper">
 						<svg viewBox="0 0 1400 800">
 							<title>Animated SVG</title>
 							<defs>
 								<clipPath id="cd-image-3">
-									<circle id="cd-circle-3" cx="110" cy="400" r="60"/>
+									<circle id="cd-circle-3" cx="1290" cy="400" r="60"/>
 								</clipPath>
 							</defs>
-							<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="web_home/images/3.png"></image>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="web_home/images/3.jpg"></image>
+						</svg>
+					</div> <!-- .svg-wrapper -->
+					<div class="cd-radial-slider-content text-center">
+						<div class="wrapper">
+							<div class="text-center">
+								<h3>CAFETERIA</h3>
+					
+								
+
+							</div>
+						</div>
+					</div> <!-- .cd-radial-slider-content -->
+				</li>
+				<li>
+					<div class="svg-wrapper">
+						<svg viewBox="0 0 1400 800">
+							<title>Animated SVG</title>
+							<defs>
+								<clipPath id="cd-image-4">
+									<circle id="cd-circle-4" cx="110" cy="400" r="60"/>
+								</clipPath>
+							</defs>
+							<image height='800px' width="1400px" clip-path="url(#cd-image-4)" xlink:href="web_home/images/4.jpg"></image>
 						</svg>
 					</div> <!-- .svg-wrapper -->
 					<div class="cd-radial-slider-content text-center">

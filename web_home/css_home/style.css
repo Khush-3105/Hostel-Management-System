@@ -8,7 +8,7 @@ body{
 	padding:0;
 	margin:0;
 	position:relative;
-	font-family: 'Poiret One';
+	
 }
 body a{
     transition:0.5s all;
@@ -171,7 +171,7 @@ h1{
     line-height: 1.5em;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 20px;
+    letter-spacing: 15px;
     text-shadow: 2px 2px 2px rgb(12, 12, 12);
 }
 .cd-radial-slider-content h2 span ,.cd-radial-slider-content h3 span {
