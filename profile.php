@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container agile-banner_nav">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-				<h1><a class="navbar-brand" href="home.php">NITC <span class="display"></span></a></h1>
+				<h1><a class="navbar-brand" href="home.php">VITB <span class="display"></span></a></h1>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -145,12 +145,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li>: <?php echo $_SESSION['department']; ?></li>
 										</ul>
 									</li>
-									<li>
+									<!--li>
 										<ul class="address-text">
 											<li><b>YEAR OF STUDY </b></li>
 											<li>: <?php echo $_SESSION['year_of_study']; ?></li>
 										</ul>
-									</li>
+									</li-->
 								</ul>
 							</div>
 								<div class="clear"></div>
@@ -193,6 +193,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li>
 									<ul class="address-text">
 										<li><b>ROOM NO </b></li>
+										<?php
+											$roomId = $_SESSION['room_id'];
+											if($hostelId == NULL || $roomId == NULL){
+												$roomNo = 'None';
+											}
+											else {
+												$sql = "SELECT * FROM Room WHERE Room_id = '$roomId'";
+												$result = mysqli_query($conn, $sql);
+												if($row = mysqli_fetch_assoc($result)){
+													$roomNo = $row['Room_No'];
+												}
+												else {
+													echo "<script type='text/javascript'>alert('Foreign Key Error-roomNo!!')</script>";
+												}
+											}
+										 ?>
+										<li>: <?php echo $roomNo; ?></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="address-text">
+										<li><b>BED NO </b></li>
 										<?php
 											$roomId = $_SESSION['room_id'];
 											if($hostelId == NULL || $roomId == NULL){
@@ -290,14 +312,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										$hmemail = $row1['Email'];
 									}
 									else {
-										$hmfname = 'none';
-										$hmlname = 'none';
-										$hmMob  = 'none';
-										$hmemail = 'none';
+										$hmfname = 'Hostel';
+										$hmlname = 'Manager';
+										$hmMob  = '-';
+										$hmemail = '-';
 									}
 								 ?>
 								<h3><?php echo $hmfname." ".$hmlname; ?></h3>
-								<h5>Admin</h5>
+								<h5>Hostel Manager</h5>
 								<ul class="address">
 									<li>
 										<ul class="address-text">
