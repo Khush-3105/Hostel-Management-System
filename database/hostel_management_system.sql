@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2023 at 07:12 PM
+-- Generation Time: Jan 10, 2023 at 06:53 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.2.0
 
@@ -36,13 +36,6 @@ CREATE TABLE `application` (
   `Message` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `application`
---
-
-INSERT INTO `application` (`Application_id`, `Student_id`, `Hostel_id`, `Application_status`, `Room_No`, `Message`) VALUES
-(4, '123', 2, 0, 1, '');
-
 -- --------------------------------------------------------
 
 --
@@ -62,12 +55,10 @@ CREATE TABLE `hostel` (
 --
 
 INSERT INTO `hostel` (`Hostel_id`, `Hostel_name`, `current_no_of_rooms`, `No_of_rooms`, `No_of_students`) VALUES
-(1, 'Block 1', NULL, '400', NULL),
-(2, 'B', NULL, '400', NULL),
-(3, 'C', NULL, '400', NULL),
-(4, 'D', NULL, '400', NULL),
-(5, 'E', NULL, '400', NULL),
-(6, 'F', NULL, '400', NULL);
+(1, 'Block 1 - BOYS', NULL, '400', NULL),
+(2, 'Block 2 - BOYS', NULL, '400', NULL),
+(3, 'Block 3 - BOYS', NULL, '400', NULL),
+(4, 'Block 1 - GIRLS', NULL, '400', NULL);
 
 -- --------------------------------------------------------
 
@@ -81,7 +72,8 @@ CREATE TABLE `hostel_manager` (
   `Fname` varchar(255) NOT NULL,
   `Lname` varchar(255) NOT NULL,
   `Mob_no` varchar(255) NOT NULL,
-  `Hostel_id` int NOT NULL,
+  `hmemail` varchar(256) DEFAULT NULL,
+  `Hostel_id` int DEFAULT NULL,
   `Pwd` longtext NOT NULL,
   `Isadmin` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -90,9 +82,12 @@ CREATE TABLE `hostel_manager` (
 -- Dumping data for table `hostel_manager`
 --
 
-INSERT INTO `hostel_manager` (`Hostel_man_id`, `Username`, `Fname`, `Lname`, `Mob_no`, `Hostel_id`, `Pwd`, `Isadmin`) VALUES
-(1, 'admin', 'admin', 'admin', '1234567890', 1, '$2y$10$FRkDZcUbdLdcTekOcExE1.afNDoBtbmMJWvlnB/AYhTHzejQlf8NC', 1),
-(101, 'HM1', 'Hostel Manager', 'Block 1', '1234567890', 2, '$2y$10$FRkDZcUbdLdcTekOcExE1.afNDoBtbmMJWvlnB/AYhTHzejQlf8NC', 0);
+INSERT INTO `hostel_manager` (`Hostel_man_id`, `Username`, `Fname`, `Lname`, `Mob_no`, `hmemail`, `Hostel_id`, `Pwd`, `Isadmin`) VALUES
+(1, 'admin', 'admin', 'admin', '1234567890', NULL, NULL, '$2y$10$FRkDZcUbdLdcTekOcExE1.afNDoBtbmMJWvlnB/AYhTHzejQlf8NC', 1),
+(101, 'HM1', 'Hostel Manager', 'Block 1 - BOYS', '9999999999', 'HM1@vitbhopal.ac.in', 1, '$2y$10$FRkDZcUbdLdcTekOcExE1.afNDoBtbmMJWvlnB/AYhTHzejQlf8NC', 0),
+(102, 'HM2', 'Hostel Manager', 'Block 2 - BOYS', '9999999999', 'HM2@vitbhopal.ac.in', 2, '$2y$10$FRkDZcUbdLdcTekOcExE1.afNDoBtbmMJWvlnB/AYhTHzejQlf8NC', 0),
+(103, 'HM3', 'Hostel Manager', 'Block 3 - BOYS', '9999999999', 'HM3@vitbhopal.ac.in', 3, '$2y$10$FRkDZcUbdLdcTekOcExE1.afNDoBtbmMJWvlnB/AYhTHzejQlf8NC', 0),
+(104, 'HMG1', 'Hostel Manager', 'Block 1 - GIRLS', '9999999999', 'HMG1@vitbhopal.ac.in', 4, '$2y$10$FRkDZcUbdLdcTekOcExE1.afNDoBtbmMJWvlnB/AYhTHzejQlf8NC', 0);
 
 -- --------------------------------------------------------
 
@@ -110,6 +105,14 @@ CREATE TABLE `message` (
   `msg_date` varchar(255) DEFAULT NULL,
   `msg_time` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`msg_id`, `sender_id`, `receiver_id`, `hostel_id`, `subject_h`, `message`, `msg_date`, `msg_time`) VALUES
+(7, '20BCE10798', '', 1, 'test', 'hello', '2023-01-10', '05:58 AM'),
+(8, '20BCE10798', '', 1, 'test', 'hello', '2023-01-10', '06:45 AM');
 
 -- --------------------------------------------------------
 
@@ -129,20 +132,8 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`Room_id`, `Hostel_id`, `Room_No`, `Allocated`) VALUES
-(1, 2, 'A001', 0),
-(2, 2, '2', 0),
-(3, 2, '3', 0),
-(4, 2, '4', 0),
-(5, 2, '5', 0),
-(6, 2, '6', 0),
-(7, 2, '7', 0),
-(8, 2, '8', 0),
-(9, 2, '9', 0),
-(10, 2, '10', 0),
-(11, 2, '11', 0),
-(12, 2, '12', 0),
-(13, 2, '13', 0),
-(14, 2, '14', 0);
+(1, 1, 'A001', 1),
+(2, 1, 'A002', 0);
 
 -- --------------------------------------------------------
 
@@ -167,7 +158,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`Student_id`, `Fname`, `Lname`, `Mob_no`, `Dept`, `Year_of_study`, `Pwd`, `Hostel_id`, `Room_id`) VALUES
-('123', 'k', 'b', '1234567890', 'cse', '3', '$2y$10$Bexhm8079BcvoGsPOTCqEeeM.p7xfGj/CRSVTrbENeyQDrBq0q75O', NULL, NULL);
+('20BCE10798', 'Khush', 'Bubna', '9322755619', 'CSE', '3', '$2y$10$Bexhm8079BcvoGsPOTCqEeeM.p7xfGj/CRSVTrbENeyQDrBq0q75O', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -237,19 +228,19 @@ ALTER TABLE `hostel`
 -- AUTO_INCREMENT for table `hostel_manager`
 --
 ALTER TABLE `hostel_manager`
-  MODIFY `Hostel_man_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `Hostel_man_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `msg_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `msg_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `Room_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Room_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
