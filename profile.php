@@ -309,7 +309,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										$hmfname = $row1['Fname'];
 										$hmlname = $row1['Lname'];
 										$hmMob  = $row1['Mob_no'];
-										$hmemail = $row1['Email'];
+										$hmemail = $row1['hmemail'];
 									}
 									else {
 										$hmfname = 'Hostel';
